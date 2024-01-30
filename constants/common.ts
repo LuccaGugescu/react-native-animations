@@ -1,3 +1,4 @@
-export const ANIMATINOS = [
-    "pulse"
+export const ANIMATIONS = [
+    "pulse",
+    "loading"
 ]

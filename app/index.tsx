@@ -1,14 +1,17 @@
 import { View, Text, FlatList, Pressable } from 'react-native'
 import React from 'react'
-import { ANIMATINOS } from '@/constants/common'
+import { ANIMATIONS } from '@/constants/common'
 import { router } from 'expo-router'
+import Container from '@/components/Container'
 
 export default function HomeScreen() {
     return (
-        <View className='p-5'>
-            <FlatList data={ANIMATINOS} renderItem={v => <AnimationItem name={v.item} />} />
-        </View>
+        <Container disableScroll={false}>
+            <FlatList data={ANIMATIONS} renderItem={v => <AnimationItem name={v.item} />} />
+        </Container>
     )
 }
 
-const AnimationItem = ({ name }: { name: string }) => <Pressable onPress={() => router.push("/animations/" + name)} className='bg-gray-900 p-4  rounded-2xl'><Text className='text-white'>{name}</Text></Pressable>
+/*
+@ts-ignore*/
+const AnimationItem = ({ name }: { name: string }) => <Pressable onPress={() => router.push("/animations/" + name)} className='bg-gray-900 p-4 rounded-2xl mt-4'><Text className='text-white'>{name}</Text></Pressable>
