@@ -1,4 +1,5 @@
 export const ANIMATIONS = [
     "pulse",
-    "loading"
+    "loading",
+    "switch"
 ]
