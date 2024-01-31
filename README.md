@@ -52,6 +52,10 @@ Follow the instructions in the [Usage](#usage) section to run the animations on 
 
 [![Loading Animation](https://github.com/LuccaGugescu/react-native-animations/assets/61294264/ffd51112-531f-457a-b0be-d679ea7fe0de)](https://github.com/LuccaGugescu/react-native-animations/assets/61294264/ffd51112-531f-457a-b0be-d679ea7fe0de)
 
+### Gallery Animation
+
+[galley.webm](https://github.com/LuccaGugescu/react-native-animations/assets/61294264/d3ac068f-5d51-44ef-81e4-77c5419c321b)
+
 ## Usage
 
 Follow these steps to run the animations on your local machine:
