@@ -40,7 +40,7 @@ export default function GalleryPage() {
 	if (!data) return <Text>Loading...</Text>;
 
 	return (
-		<View className="flex-1">
+		<View className="flex-1 w-full h-full">
 			<MaterialCommunityIcons
 				onPress={() => router.back()}
 				name="chevron-left"
@@ -100,12 +100,12 @@ export default function GalleryPage() {
 
 const PEXELS_URL = "https://api.pexels.com/v1/search?query=nature";
 async function fetchImagesFromPexels() {
-	const api_key = process.env.PEXELS ? process.env.PEXELS : "";
 	const data = await fetch(PEXELS_URL, {
 		headers: {
-			Authorization: api_key,
+			Authorization: process.env.EXPO_PUBLIC_API_URL,
 		},
 	});
 	const { photos } = await data.json();
+
 	return photos;
 }
