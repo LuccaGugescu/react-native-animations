@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
 import {
 	Gesture,
@@ -27,7 +27,9 @@ export default function Pan() {
 		<GestureHandlerRootView className="flex-1">
 			<View className="flex flex-row items-center justify-center h-full">
 				<GestureDetector gesture={pinchGesture}>
-					<Animated.View style={[styles.box, animatedStyle]} />
+					<Animated.View style={[styles.box, animatedStyle]}>
+						<Image style={[StyleSheet.absoluteFill, styles.box]} source={{ uri: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph" }} />
+					</Animated.View>
 				</GestureDetector>
 			</View>
 		</GestureHandlerRootView>
