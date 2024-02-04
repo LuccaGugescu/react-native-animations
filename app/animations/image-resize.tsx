@@ -6,7 +6,6 @@ import {
 	GestureHandlerRootView,
 } from 'react-native-gesture-handler'; import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import { StyleSheet } from "nativewind";
-const END_POSITION = 200;
 
 export default function Pan() {
 	const scale = useSharedValue(1)

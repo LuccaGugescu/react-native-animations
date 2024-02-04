@@ -3,5 +3,5 @@ export const ANIMATIONS = [
     "loading",
     "switch",
     "gallery",
-    "pinch"
+    "image-resize"
 ]
