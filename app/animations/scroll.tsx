@@ -20,15 +20,16 @@ const AVATAR_SIZE = 70;
 export default function Scroll() {
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
+            <Image source={{uri: "https://plus.unsplash.com/premium_photo-1706625695154-d8a6a1c275d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}} style={StyleSheet.absoluteFillObject}/>
             <StatusBar hidden />
             <FlatList
                 data={DATA}
                 keyExtractor={item => item.key}
-                renderItem={item => <View className='flex flex-row items-center m-4 p-1 bg-gray-300 rounded-2xl'>
+                renderItem={item => <View className='flex flex-row items-center m-4 p-4 bg-gray-200 rounded-2xl shadow-lg shadow-black'>
                     <Image src={item.item.image} style={{ width: AVATAR_SIZE, height: AVATAR_SIZE, borderRadius: AVATAR_SIZE }} />
                     <View style={{ marginLeft: SPACING }}>
-                        <Text>{item.item.name}</Text>
-                        <Text>{item.item.email}</Text>
+                        <Text className='font-bold text-lg'>{item.item.name}</Text>
+                        <Text className='text-blue-300'>{item.item.email}</Text>
                         <Text>{item.item.jobTitle}</Text>
 
                     </View>
