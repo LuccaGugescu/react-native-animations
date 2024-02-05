@@ -6,6 +6,7 @@ import {
 	GestureHandlerRootView,
 } from 'react-native-gesture-handler'; import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import { StyleSheet } from "nativewind";
+import Container from "@/components/Container";
 
 export default function Pan() {
 	const scale = useSharedValue(1)
@@ -53,13 +54,13 @@ export default function Pan() {
 	})
 	return (
 		<GestureHandlerRootView className="flex-1">
-			<View className="flex flex-row items-center justify-center h-full">
+			<Container disableScroll center>
 				<GestureDetector gesture={composed}>
 					<Animated.View style={[styles.box, animatedStyle]}>
 						<Image style={[StyleSheet.absoluteFill, styles.box]} source={{ uri: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph" }} />
 					</Animated.View>
 				</GestureDetector>
-			</View>
+			</Container>
 		</GestureHandlerRootView>
 	);
 }
