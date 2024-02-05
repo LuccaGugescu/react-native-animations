@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 import { MotiTransitionProp, MotiView } from 'moti'
 import { Pressable, View } from 'react-native'
 import { Easing } from 'react-native-reanimated'
-interface Switch {
+interface SwitchProps {
     size: number
     onPress: () => void,
     isActive: boolean
@@ -18,7 +18,7 @@ const _switchVariants = {
     inactive: "#1f1c1c",
     active: "#a3a0a0"
 }
-export default function Switch({ size, onPress, isActive }: Switch) {
+export default function Switch({ size, onPress, isActive }: SwitchProps) {
     const trackWidth = useMemo(() => size * 1.6, [size]);
     const trackHeight = useMemo(() => size * 0.6, [size]);
     const knobSize = useMemo(() => size * 0.5, [size]);
