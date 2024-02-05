@@ -1,7 +1,8 @@
 export const ANIMATIONS = [
-    "pulse",
-    "loading",
-    "switch",
-    "gallery",
-    "image-resize"
-]
+	"pulse",
+	"loading",
+	"switch",
+	"gallery",
+	"image-resize",
+	"scroll",
+];
