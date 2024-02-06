@@ -37,8 +37,14 @@ export default function Scroll() {
                         ITEM_SIZE * item.index,
                         ITEM_SIZE * (item.index + 2)
                     ]
+                    const scale = scrollY.interpolate(
+                        {
+                            inputRange: inputRange,
+                            outputRange: [1, 1, 1, 0]
+                        }
+                    )
                     return (
-                        <Animated.View className='flex flex-row bg-gray-200 shadow-xl shadow-black rounded-2xl' style={{ padding: SPACING, marginBottom: SPACING }}>
+                        <Animated.View className='flex flex-row bg-gray-200 shadow-xl shadow-black rounded-2xl' style={{ padding: SPACING, marginBottom: SPACING, transform: [{ scale: scale }] }}>
                             <Image src={item.item.image} style={{ width: AVATAR_SIZE, height: AVATAR_SIZE, borderRadius: AVATAR_SIZE, marginRight: SPACING / 2 }} />
                             <View style={{ marginLeft: SPACING }}>
                                 <Text className='font-bold text-lg'>{item.item.name}</Text>
