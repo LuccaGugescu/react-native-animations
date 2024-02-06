@@ -16,9 +16,10 @@ const DATA = [...Array(30).keys()].map((_, i) => {
 
 const SPACING = 20;
 const AVATAR_SIZE = 70;
+const ITEM_SIZE = AVATAR_SIZE + SPACING * 3;
 
 export default function Scroll() {
-    const scrollY = 0;
+    const scrollY = React.useRef(new Animated.Value(0)).current;
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <Image blurRadius={5} source={{ uri: "https://plus.unsplash.com/premium_photo-1706625695154-d8a6a1c275d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }} style={StyleSheet.absoluteFillObject} />
@@ -30,6 +31,12 @@ export default function Scroll() {
                 data={DATA}
                 keyExtractor={item => item.key}
                 renderItem={item => {
+                    const inputRange = [
+                        -1,
+                        0,
+                        ITEM_SIZE * item.index,
+                        ITEM_SIZE * (item.index + 2)
+                    ]
                     return (
                         <Animated.View className='flex flex-row bg-gray-200 shadow-xl shadow-black rounded-2xl' style={{ padding: SPACING, marginBottom: SPACING }}>
                             <Image src={item.item.image} style={{ width: AVATAR_SIZE, height: AVATAR_SIZE, borderRadius: AVATAR_SIZE, marginRight: SPACING / 2 }} />
