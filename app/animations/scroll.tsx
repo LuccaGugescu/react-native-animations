@@ -18,12 +18,13 @@ const SPACING = 20;
 const AVATAR_SIZE = 70;
 
 export default function Scroll() {
-
+    const scrollY = 0;
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <Image blurRadius={5} source={{ uri: "https://plus.unsplash.com/premium_photo-1706625695154-d8a6a1c275d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }} style={StyleSheet.absoluteFillObject} />
             <StatusBar hidden />
             <Animated.FlatList
+                onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], { useNativeDriver: true })}
                 contentContainerStyle={{ padding: SPACING }}
                 scrollEventThrottle={16}
                 data={DATA}
